@@ -17,6 +17,26 @@
             <source src="img/save-the-date.mp4" type="video/mp4">
             <source src="img/save-the-date.webm" type="video/webm">
         </video>
+
+        <script>
+  // Se o autoplay for bloqueado no mobile, ativa os controles
+  // e dá play no primeiro toque.
+        (function () {
+          const v = document.getElementById('bgVideo');
+          const tryPlay = () => v.play().catch(() => {});
+          tryPlay(); // tenta tocar
+          v.addEventListener('error', () => v.setAttribute('controls','controls'));
+          // Em telas pequenas, já mostra controles por via das dúvidas
+          if (window.matchMedia('(max-width: 768px)').matches) {
+            v.setAttribute('controls','controls');
+          }
+          // Se ainda assim o navegador exigir gesto do usuário:
+          ['touchstart','click'].forEach(ev =>
+            window.addEventListener(ev, () => tryPlay(), { once:true })
+          );
+        })();
+</script>
+
     </section>
 </body>
 </html>
