@@ -3,32 +3,54 @@ body {
     background-color: #645f49;
 }
 
-.video-data {
+.convite {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-video {
-    width: 40%;
-    height: auto;
-    border-radius: 5px;
+    position: relative;
 }
 
-h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #f1ebdc;
-    font-family: "Parisienne", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 40px;
+.btn-ancora {
+    position: absolute;
+    top: 58.6%;      /* posição vertical do centro do selo */
+    left: 50%;       /* posição horizontal do centro do selo */
+    transform: translate(-50%, -50%);
+    width: 19.5%;    /* largura proporcional ao selo */
+    height: 19.5%;   /* altura proporcional ao selo */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+    text-indent: -9999px; /* esconde texto */
 }
 
-@media (max-width: 980px) {
-    video 
+.img-convite {
+    display: block;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .convite
     {
-        width: 90%;
-        object-fit: contain;
+      display: flex;
+      align-items: center;   
+      justify-content: center; 
+      margin-top: 50%; 
     }
-}
+  
+    .img-convite {
+      width: 98%;
+      height: auto;
+    }
+
+    .btn-ancora {
+        top: 50%; /* ou 49%, ajusta na prática */
+        width: 80px;
+        height: 80px;
+    }
+
+
+  }
+  /* --------------------------------------- */
