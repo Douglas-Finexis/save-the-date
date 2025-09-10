@@ -1,0 +1,56 @@
+body {
+    padding: 0;
+    background-color: #645f49;
+}
+
+.convite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.btn-ancora {
+    position: absolute;
+    top: 58.6%;      /* posição vertical do centro do selo */
+    left: 50%;       /* posição horizontal do centro do selo */
+    transform: translate(-50%, -50%);
+    width: 19.5%;    /* largura proporcional ao selo */
+    height: 19.5%;   /* altura proporcional ao selo */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+    text-indent: -9999px; /* esconde texto */
+}
+
+.img-convite {
+    display: block;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .convite
+    {
+      display: flex;
+      align-items: center;   
+      justify-content: center; 
+      margin-top: 50%; 
+    }
+  
+    .img-convite {
+      width: 98%;
+      height: auto;
+    }
+
+    .btn-ancora {
+        top: 50%; /* ou 49%, ajusta na prática */
+        width: 80px;
+        height: 80px;
+    }
+
+
+  }
+  /* --------------------------------------- */
